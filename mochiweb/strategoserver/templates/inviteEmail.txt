@@ -1,0 +1,11 @@
+Greetings!
+
+You've been challenged to a game of Stratego at strategolobby.com.
+
+{{email_address}} vs. {{opposing_email_address}} 
+
+Follow this link to begin playing: 
+{{board_url}}
+
+Thanks,
+StrategoLobby Team

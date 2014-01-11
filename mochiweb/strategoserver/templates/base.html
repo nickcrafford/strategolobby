@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Play you some ~Stratego for great fun</title>
+    <link rel="shortcut icon" href="/media/images/favicon.ico" /> 
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/strategolobby.css" />  
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/jqmodal.js"></script>
+    <script type="text/javascript" src="/js/md5.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+  </head>
+  <body>
+    <h1 id="baseHeader">
+      <a href="/"><img src="/media/images/logo.png"/></a>
+      <input type='button' value='New Game'  id="globalStartGameButton" />
+      <input type='button' value='How to Play' id="globalHowToPlayButton" />
+      <input type='button' value='Leaderboard' id="globalLeaderboardButton" />
+      {% if isBoardPage %}
+      <input type='button' value='Last Move'   id="boardHighlightLastMoveBytton" />
+      {% endif %}
+      <div class="clear"></div>
+    </h1>
+    <div id="baseDiv">
+      {% block content %}{% endblock %}
+    </div>
+    <h1 id="footer">
+      <div id="copyright">&copy; Copyright 2011 <a class="mailLink" href="mailto:nick@webdevengine.com">WebDevEngines</a></div>
+      <div id="trademarks">All trademarks and copyrights are property of their respective owners</div>
+    </h1>
+    <div id="missingEmail">
+      <h3>Please enter your email address</h3>
+      <input type="button" id="closeMissingEmail" value="Close" />
+    </div>
+    <div id="selectSide">
+      <h3>Please select a color/side</h3>
+      <input type="button" id="closeSelectSide" value="Close" />
+    </div>
+    <div id="missingOpposingEmail">
+      <h3>Please enter the email address of your opponent</h3>
+      <input type="button" id="closeMissingOpposingEmail" value="Close" />
+    </div>
+    <div id="captchaWrong">
+      <h3>The captcha text does not match</h3>
+      <input type="button" id="closeCaptchaWrong" value="Close" />
+    </div>
+    <div id="howToPlay">
+      <input type="button" id="closeHowToPlay" value="Close" />
+      <h3>Welcome to StrategoLobby!</h3>
+      <p>
+        StrategoLobby is a carefully crafted Stratego variant designed for 
+        human vs. human play.
+      </p>
+      <h3>Objective</h3>
+      <p>
+        The objective of StrategoLobby is to capture the opposing player's 
+        flag (F piece) by advancing your movable pieces across the board. Defense 
+        is also key. Keeping your flag safe is just as important as capturing your opponent's.
+      </p>
+      <h3>Gameplay</h3>
+      <p>
+        Each player has a chance to setup their 40 allotted pieces at the beginning of the game. 
+        Once both players have set their boards, the player who created the game will make the first move. After the 
+        initial move, players take turns moving until either a flag is captured or a stalemate is 
+        reached, i.e. there is no way for either player to capture a flag.
+      </p>
+      <h3>Rules</h3>
+      <ul>
+        <li>Players may move one piece per turn. </li>
+        <li>Diagonal moves are not allowed.</li>
+        <li>If two pieces attack each other, the piece with the higher rank will win; e.g. if a 10 attacks a 9 or vice versa, the 10 will win.</li>
+        <li>B (Bomb) and F (Flag) pieces are stationary; they cannot be moved after board setup is finished.</li>
+        <li>Pieces can move one position at a time with the exception of scouts (2s), which can move multiple positions in one direction during a turn.</li>
+        <li>The lake areas (light blue squares) are impassible.</li>
+        <li>2s cannot jump other players or impassible areas.</li>
+        <li>Bomb pieces (Bs) defeat any rank when attacked with the exception of 3s. If a B is attacked by a 3 it will be removed from the board.</li>
+        <li>The S piece (Spy) can defeat a 10 piece. However, the S piece can be defeated by any piece on the board, regardless of its rank.</li>
+        <li>Defense and offense are silent. If a piece is attacked, neither side must reveal their rank. Note: If a piece is attacked by a 2 it will reveal its rank regardless of the outcome.</li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9206226-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

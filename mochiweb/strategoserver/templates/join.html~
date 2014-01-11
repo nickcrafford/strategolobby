@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}    
+<br />
+<br />
+<h1 id="joinHeader">Looking to join an existing game? What is?</h1>
+<br />
+<form name="searchForm" action="/search/" method="post">
+  <div id="joinDiv">
+    <strong>Your name</strong>
+    <input type="text" style="width:150px;padding:2px;" name="alias" id="alias" />
+    <strong style="padding-left:25px;">Your skill level</strong>
+    <select name="skillLevel" style="padding:2px;">
+      <option value="">Select...</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="veteran">Veteran</option>
+      <option value="expert">Expert</option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <br />
+  <input type="button" class="gameButton" value="SEARCH FOR OPEN GAMES" id="searchForOpenGamesButton" style="display:block;float:left;" />
+  <input type="button" class="gameButton" value="BACK" style="display:block;float:right;"    id="tryAgainGameButton" />
+</form>
+{% endblock %}

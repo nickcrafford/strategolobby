@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="boardMain">
+  <div id="main">
+    <div class="clear"></div>
+    <div id="gameBoard">
+      <div class="boardMessage" id="gameOverMessage">Game Over!</div>
+      <div class="boardMessage" id="waitingForPlayerMessage">
+        Waiting for an opponent
+        <img id="loadingImg" src="/media/images/loading.gif" />
+      </div>
+      <div class="boardMessage" id="setBoardMessage">
+        Please set your board
+        <br/>
+        <div id="setInstructions">
+          Click or touch a piece to activate it.
+          <br />
+          Click or touch another piece to swap positions.
+        </div>
+        <input id="setBoardButton" type='button' value='Click here after your board is set' />
+      </div>
+      <div class="boardMessage" id="boardSetWaitingMessage">
+        Your board is now set<br/><br/>Waiting for opponent
+        <img id="loadingImg" src="/media/images/loading.gif" />
+      </div>
+      <div class="boardMessage" id="gameOnMessage">
+        Game On
+      </div>
+    </div>    
+    <div class="infoBox">
+      <div class="infoHeader" id="gameName"></div>
+      <div id="vs" class="infoSlot">
+        <div class="toggle" id="playerToggle"></div>
+        <div class="playerTag" id="playerTag"></div>
+        <div class="clear"></div>
+        <div class="toggle" id="opposingPlayerToggle"></div>
+        <div class="playerTag" id="opposingPlayerTag"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+      <div id="message" class="infoSlot">
+        <ul id="messageList"></ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="contentBody">
+<h1>StrategoLobby Leaders!</h1>
+<table align="center">
+{% for leader in leaders %}
+  <tr>
+    <td>{{leader.alias}}</td>
+    <td>{{leader.numWins}} wins</td>
+  </tr>
+{% endfor %}
+</table>    
+</div>
+{% endblock %}
+

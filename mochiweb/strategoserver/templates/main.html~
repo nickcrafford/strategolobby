@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="contentBody">
+  <img src="/media/images/board.png" />
+  <div class="form">
+    <ul class="infoList">
+      <li>StrategoLobby is a minimalist web based version of Stratego optimized for human vs. human play</li>
+      <li>Playing is 100% anonymous and FREE</li>      
+      <li>Works with Firefox 4, Safari, Opera, and Google Chrome</li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="buttonBar">
+  <input type="button" class="gameButton leftButton"  id="gotoJoin"  value="CLICK HERE TO JOIN GAME"  />
+  <input type="button" class="gameButton rightButton" id="gotoStart" value="CLICK HERE TO START GAME" />
+</div>
+{% endblock %}
